@@ -12,7 +12,7 @@ class CollectionViewController: UICollectionViewController {
     
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
-    @IBOutlet weak var buttonTapped: UIBarButtonItem!
+//    @IBOutlet weak var buttonTapped: UIBarButtonItem!
     
     //Properties
     var meme: Meme?

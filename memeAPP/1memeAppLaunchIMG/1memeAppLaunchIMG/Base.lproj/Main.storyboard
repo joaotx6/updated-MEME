@@ -274,8 +274,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="buttonTapped" destination="bYJ-aL-8SF" id="HuQ-jx-AQ3"/>
-                        <outlet property="flowLayout" destination="jg5-RD-a2N" id="cLS-Le-pzE"/>
+                        <outlet property="flowLayout" destination="jg5-RD-a2N" id="U2B-R0-d9j"/>
                         <segue destination="oSo-nh-hWn" kind="presentation" identifier="goToEditor" id="Dh0-09-92S"/>
                         <segue destination="nSd-QX-xRR" kind="show" identifier="goToDetails" id="6q7-zF-GE1"/>
                     </connections>
