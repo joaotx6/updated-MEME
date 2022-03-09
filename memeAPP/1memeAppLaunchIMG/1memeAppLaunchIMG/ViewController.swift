@@ -30,6 +30,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     var memes = [Meme]()
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         shareButton.isEnabled = false
@@ -165,6 +166,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 self.present(activityInstance, animated: true, completion: nil)
             }
         }
+        present(activityInstance, animated: true, completion: nil)
     }
     
     @IBAction func cancelButton(_ sender: Any) {

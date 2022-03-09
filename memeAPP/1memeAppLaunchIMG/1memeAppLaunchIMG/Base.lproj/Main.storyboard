@@ -95,6 +95,9 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="square.and.arrow.up" catalog="system"/>
+                                                <connections>
+                                                    <action selector="shareButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iTo-Dt-ZQK"/>
+                                                </connections>
                                             </button>
                                             <connections>
                                                 <action selector="shareButton:" destination="BYZ-38-t0r" id="ODF-ST-z4B"/>
@@ -106,6 +109,9 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
+                                                <connections>
+                                                    <action selector="cancelButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o9a-3e-Uib"/>
+                                                </connections>
                                             </button>
                                             <connections>
                                                 <action selector="cancelButton:" destination="BYZ-38-t0r" id="ce9-rh-QJm"/>
@@ -231,7 +237,7 @@
         <!--Sent Memes-->
         <scene sceneID="srH-gQ-jh4">
             <objects>
-                <collectionViewController id="XcY-eE-rRP" customClass="CollectionViewController" sceneMemberID="viewController">
+                <collectionViewController id="XcY-eE-rRP" customClass="CollectionViewController" customModule="_memeAppLaunchIMG" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="dEj-hB-l8Q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -315,8 +321,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6q7-zF-GE1"/>
-        <segue reference="Dh0-09-92S"/>
+        <segue reference="NoF-O4-x8L"/>
+        <segue reference="zfQ-c7-zAB"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="camera.fill" catalog="system" width="128" height="94"/>

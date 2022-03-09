@@ -33,7 +33,7 @@ class TableViewController: UITableViewController  {
     
     func navigateToEditor(meme: Meme?) {
         self.meme = meme
-        self.performSegue(withIdentifier: "showEditor", sender: self)
+        self.performSegue(withIdentifier: "goToEditor", sender: self)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
