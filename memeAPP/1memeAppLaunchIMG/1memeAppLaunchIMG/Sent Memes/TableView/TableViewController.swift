@@ -18,13 +18,14 @@ class TableViewController: UITableViewController  {
     //property that hols each meme
     var meme: Meme?
 
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
     
     @IBAction func tapOnAddButton(_ sender: Any) {
         self.navigateToEditor(meme: nil)
+        
     }
     
      func sections(in tableview: UITableView) -> Int {
@@ -34,6 +35,11 @@ class TableViewController: UITableViewController  {
     func navigateToEditor(meme: Meme?) {
         self.meme = meme
         self.performSegue(withIdentifier: "goToEditor", sender: self)
+    }
+    
+    func navigateToDetails(meme: Meme?) {
+        self.meme = meme
+        self.performSegue(withIdentifier: "goToDetails", sender: self)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -58,9 +64,12 @@ class TableViewController: UITableViewController  {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let meme = self.storyboard!.instantiateViewController(withIdentifier: "TableViewController") as! TableViewController
-        meme.meme = self.memes![(indexPath as NSIndexPath).row]
-        self.navigationController!.pushViewController(meme, animated: true)
+        let meme = memes![indexPath.row]
+        self.navigateToDetails(meme: meme)
+        
+//        let meme = self.storyboard!.instantiateViewController(withIdentifier: "TableViewController") as! TableViewController
+//        meme.meme = self.memes![(indexPath as NSIndexPath).row]
+//        self.navigationController!.pushViewController(meme, animated: true)
     }
     
     

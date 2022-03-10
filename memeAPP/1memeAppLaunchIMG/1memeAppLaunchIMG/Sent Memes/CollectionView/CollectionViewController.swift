@@ -28,6 +28,12 @@ class CollectionViewController: UICollectionViewController {
         goToEditor(meme: nil)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        collectionView.reloadData()
+        
+    }
+    
     func goToEditor(meme: Meme?) {
         self.meme = meme
         self.performSegue(withIdentifier: "goToEditor", sender: self)
@@ -50,11 +56,6 @@ class CollectionViewController: UICollectionViewController {
 
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-    }
-    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MemesCollectionViewCell", for: indexPath) as! MemesCollectionViewCell
@@ -69,8 +70,8 @@ class CollectionViewController: UICollectionViewController {
         
         let detailController = self.memes[(indexPath as NSIndexPath).row]
         goToDetails(meme: detailController)
-                                                
-    }
+
+        }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //The method collectionView(_:numberOfItemsInSection:) should return the number of memes in that array.
