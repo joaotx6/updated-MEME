@@ -21,5 +21,4 @@ class DetailsViewController: UIViewController {
     func loadImage() {
         self.imgView.image = memedImage
     }
-    
 }

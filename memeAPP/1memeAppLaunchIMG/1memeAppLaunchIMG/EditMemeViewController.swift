@@ -17,7 +17,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var pickFromGalleryButton: UIBarButtonItem!
     
     //buttons top bar (navbar)
-    @IBOutlet weak var navBar: UINavigationBar!
+    @IBOutlet weak var navBar: UIToolbar!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     
@@ -28,8 +28,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     //Create a property called memes, and set it to the memes array from the AppDelegate.
     var memes = [Meme]()
-    
-    
+    var editMeme : Meme?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +39,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         setupTextFields(topTextField, text: "TOP")
         setupTextFields(bottomTextField, text: "BOTTOM")
-        
     }
     
     //MARK: textfields
@@ -78,7 +76,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     //move the view up
     @objc func keyboardWillShow(_ notification: Notification) {
         if bottomTextField.isFirstResponder {
-            self.view.frame.origin.y -= getKeyboardHeight(notification)
+            view.frame.origin.y = -getKeyboardHeight(notification)
         }
     }
     
@@ -178,14 +176,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func save() {
         
         let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imgViewer.image!, memedImage: generateMemedImage())
-        
-        //Code for saving to the app delegate's memes array
-        //and
-        // Add it to the memes array in the Application Delegate
+
+        /* Code for saving to the app delegate's memes array
+        and
+        Add it to the memes array in the Application Delegate */
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
         appDelegate.memes.append(meme)
-        
     }
     
     //func to show and hide bars
